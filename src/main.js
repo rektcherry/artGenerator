@@ -68,7 +68,6 @@ const startCreating = async () => {
         editionCount++;
         idx.shift();
       } else {
-        console.log("NFT exists");
         failedCount++;
         if (failedCount >= uniqueDna) {
           console.log(
