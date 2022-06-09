@@ -1,8 +1,8 @@
 const sha1 = require('sha1');
+const {format, background, uniqueDna, layerConfigurations} = require('./config.js');
 const {drawBackground} = require('../utils/backgroundGenerator.js');
 const {createDna, isDnaUnique, filterDNA} = require('../utils/handleDNA.js');
 const {constructLayerToDna, layersSetup} = require('../utils/layers.js');
-const {format, background, uniqueDna, layerConfigurations} = require('./config.js');
 
 const {
   saveImage,
