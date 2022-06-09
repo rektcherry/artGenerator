@@ -4,4 +4,4 @@ yarn
 node index.js
 ```
 
-##Layers and names are just example to show the art results, replace them with your own.
+## Layers and names are just example to show the art results, replace them with your own.
