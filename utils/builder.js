@@ -29,24 +29,22 @@ const buildFolder = () => {
 };
 
 const addMetadata = (_dna, _edition) => {
-  var date = new Date(Date.now());
-  
+  let date = Date.now();
   if (generateName){
     nftName = createName();
   };   
-
   let tempMetadata = {
-    Collection: collectionName,
-    Name: nftName,
-    Description:  `${description} ${_edition}`,
-    Image: `${url}/${_edition}.png`,
-    Dna: sha1(_dna),
-    Generation: generation, 
-    Date: date,
-    Compiler: "Magical Art Generator 1.0.0",
-    Edition: _edition,
-    Artist: creator,
-    Attributes: attributesList,
+    collection: collectionName,
+    name: nftName,
+    description:  `${description} ${_edition}`,
+    image: `${url}/${_edition}.png`,
+    dna: sha1(_dna),
+    generation: generation, 
+    date: date,
+    compiler: "Magical Art Generator 1.0.0",
+    edition: _edition,
+    artist: creator,
+    attributes: attributesList,
   };
 
   metadataList.push(tempMetadata);
@@ -56,8 +54,8 @@ const addMetadata = (_dna, _edition) => {
 const addAttributes = (_element) => {
   let selectedElement = _element.layer.selectedElement;
   attributesList.push({
-    Trait: _element.layer.name,
-    Value: selectedElement.name,
+    trait: _element.layer.name,
+    value: selectedElement.name,
   });
 };
 
@@ -75,15 +73,15 @@ const drawElement = (_renderObject, _index, _layersLen) => {
 
 const saveImage = (_editionCount) => {
     fs.writeFileSync(
-      `${buildDir}/NFT/NFT${_editionCount}.png`,
+      `${buildDir}/NFT/${_editionCount}.png`,
       canvas.toBuffer("image/png")
     );
   }; 
 
 const writeMetaData = (_editionCount) => {
-  let metadata = metadataList.find((meta) => meta.Edition == _editionCount);
+  let metadata = metadataList.find((meta) => meta.edition == _editionCount);
   fs.writeFileSync(
-    `${buildDir}/Metadata/NFT${_editionCount}_metadata.json`,
+    `${buildDir}/Metadata/${_editionCount}.json`,
     JSON.stringify(metadata, null, 2)
   );
 };  
