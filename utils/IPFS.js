@@ -4,11 +4,11 @@ let editionCount = 1;
 
 while (editionCount <= layerConfigurations[layerConfigurations.length-1].editionSize)
 {
-  let readData = fs.readFileSync(`./build/Metadata/NFT${editionCount}_metadata.json`);
+  let readData = fs.readFileSync(`./build/Metadata/${editionCount}.json`);
   let data = JSON.parse(readData);
-  data.Image = `${url}/${data.Edition}.png`;
+  data.image = `${url}/${data.edition}.png`;
    fs.writeFileSync(
-     `./build/Metadata/NFT${data.Edition}_metadata.json`,
+     `./build/Metadata/${data.edition}.json`,
       JSON.stringify(data, null, 2));
       editionCount++;
 };
