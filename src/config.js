@@ -1,5 +1,5 @@
 const collectionName = 'Astral Experience';
-const url = "ipfs://CID"; 
+const url = "ipfs://CID/"; 
 const description = 'Alien World';
 const generation = 'Alien';
 const creator = 'rektcherry';
