@@ -1,3 +1,5 @@
+const { background, format } = require("../src/config");
+const { ctx } = require("./builder");
 const drawBackground = () => {
     let rng = Math.floor(Math.random() * 360);
     let rngColor = `hsl(${rng}, 100%, ${background.brightness})`;
